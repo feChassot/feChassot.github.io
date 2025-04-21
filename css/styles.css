@@ -1,0 +1,172 @@
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&family=Cabinet+Grotesk:wght@300;700&display=swap');
+
+/* GLOBAL STYLES */
+body {
+  --primary-color: #3b82f6;
+  background-color: #0b1623;
+  color: white;
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px) 0 0 / 80px 80px,
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px) 0 0 / 80px 80px;
+
+  mask-image: linear-gradient(to top, transparent 0%, white 30%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, white 30%);
+}
+
+
+strong,
+b {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.25rem;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+h2,
+h3,
+h4,
+h6 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+h5 {
+  font-size: 14px;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 100;
+  color: #575e71
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 1rem 0;
+  font-family: 'Satoshi', sans-serif;
+}
+
+ul {
+  font-size: 14px;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  font-family: 'Satoshi', sans-serif;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* MAIN CONTAINER */
+.top-section {
+  padding: 1.25rem;
+}
+
+.welcome-box,
+.about-box {
+  flex: 1;
+}
+
+.about-box {
+  max-width: 350px;
+}
+
+/* WELCOME BOX OUTER */
+.welcome-box {
+  background-color: #1c2531;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+/* FLEX layout for text and image side-by-side */
+.welcome-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* LEFT: TEXT CONTENT */
+.text-column {
+  flex: 1;
+  min-width: 280px;
+  padding-right: 2rem;
+}
+
+/* RIGHT: MEMOJI IMAGE */
+.memoji img {
+  max-height: 300px;
+  width: auto;
+  border-radius: 12px;
+}
+
+/* SOCIAL ICON LINKS */
+.socials {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+/* BUTTON STYLE */
+.book-call {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.book-call:hover {
+  background-color: var(--primary-color);
+}
+
+.hover-theme:hover {
+  border-color: var(--primary-color);
+}
+
+/* Each box takes half of the space */
+.about-box {
+  flex: 1;
+  min-width: 200px;
+  background-color: #1c2531;
+  padding: 2rem;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.about-text {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  font-family: 'Satoshi', sans-serif;
+}
+
+body.red-theme {
+  --primary-color: #ef4444;
+}
+
+body.blue-theme {
+  --primary-color: #3b82f6;
+}
+
+body.green-theme {
+  --primary-color: #22c55e;
+}

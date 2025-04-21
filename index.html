@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Felipe Chassot | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Fontshare fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@400,500,700&display=swap"
+        rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themes = ['red-theme', 'blue-theme', 'green-theme'];
+        const themeButtons = document.querySelectorAll('.theme-switch button');
+
+        themeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedTheme = button.getAttribute('data-theme');
+
+                // Remove existing theme classes
+                themes.forEach(t => document.body.classList.remove(t));
+
+                // Add selected theme class
+                document.body.classList.add(selectedTheme);
+
+                // Save to localStorage
+                localStorage.setItem('theme', selectedTheme);
+            });
+        });
+
+        // Apply saved theme on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme && themes.includes(savedTheme)) {
+            document.body.classList.add(savedTheme);
+        }
+    });
+</script>
+
+<body class="text-white">
+    <!-- MAIN PAGE CONTAINER -->
+    <div class="top-section flex flex-col items-start gap-6 px-6 max-w-[1200px] mx-auto">
+        <div class="top-row flex flex-wrap gap-6 justify-center w-full">
+            <!-- WELCOME BOX: left (text/buttons) + right (image) -->
+            <section
+                class="welcome-box w-full lg:w-[60%] bg-gray-800 p-6 rounded-x h-[370px] transition duration-100 ease-in-out hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-lg border border-gray-700 hover:border-[var(--primary-color)]">
+                <div class="welcome-content">
+                    <!-- LEFT: Text + Links -->
+                    <div class="text-column">
+                        <h5>
+                            welcome
+                        </h5>
+                        <p>
+                            Hi, I'm <strong>Felipe Chassot</strong>, a software developer with
+                            a focus on backend systems and clean architecture.
+                        </p>
+                        <p>
+                            I'm passionate about turning complex problems into elegant code.
+                            Let's collaborate on something amazing — or just say hi!
+                        </p>
+
+                        <div class="socials">
+                            <a href="#" aria-label="GitHub"
+                                class="w-14 h-14 flex justify-center items-center border-2 border-[var(--primary-color)] text-white rounded-xl hover:text-[var(--primary-color)] hover:bg-white transition">
+                                <i class="fab fa-github text-2xl"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn"
+                                class="w-14 h-14 flex justify-center items-center border-2 border-[var(--primary-color)] text-white rounded-xl hover:text-[var(--primary-color)] hover:bg-white transition">
+                                <i class="fab fa-linkedin-in text-2xl"></i>
+                            </a>
+                        </div>
+
+                        <button
+                            class="book-call text-white border-2 px-4 py-2 rounded hover:bg-[var(--primary-color)]">Book
+                            a call</button>
+                    </div>
+
+                    <!-- RIGHT: Memoji image -->
+                    <div class="memoji">
+                        <img src="img/memoji-removebg.png" alt="Felipe Chassot memoji" />
+                    </div>
+                </div>
+            </section>
+            <section
+                class="about-box w-full lg:w-[20%] bg-gray-800 p-6 rounded-xl h-[370px] transition duration-100 ease-in-out hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-lg border border-gray-700 hover:border-[var(--primary-color)]">
+                <div class="about-content">
+                    <h1><strong>About me</strong></h1><br>
+                    <p class="about-text">
+                        Hi. I'm Felipe Chassot, a back-end software developer from Brazil.
+                        My primary tools are:
+                    <ul>
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                    <p class="about-text">
+                        Beyond coding, I'm passionate about challenges, gaming, and music.
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-6 w-full mt-0">
+            <!-- Let's work together box -->
+            <section
+                class="w-full lg:w-[35%] bg-gray-800 text-white p-6 rounded-xl transition duration-100 ease-in-out hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-lg border border-gray-700 hover:border-[var(--primary-color)]">
+                <div class="work-together-content">
+                    <h1 class="text-lg font-semibold mb-4">Let's start working together!</h1>
+                    <p class="mb-4">
+                        I'm always open to new opportunities and collaborations. If you have a project in mind or just
+                        want to chat, feel free to reach out!
+                    </p>
+                    <p class="text-gray-400 italic mb-1">Contact Details</p>
+                    <p class="mb-2">fechassotdev@gmail.com</p>
+                    <p class="text-gray-400 italic mb-1">Discord</p>
+                    <p>foxzaox</p>
+                </div>
+            </section>
+
+            <!-- 4 button boxes side-by-side with it -->
+            <div class="flex flex-wrap gap-6 w-full lg:w-[63%]">
+                <div
+                    class="bg-gray-800 text-white p-4 rounded-xl w-full md:w-[48%] flex items-center justify-center transition duration-100 ease-in-out hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-lg border border-gray-700 hover:border-[var(--primary-color)]">
+                    <a href="resume.pdf" target="_blank" class="font-semibold hover:underline">📄 View Resume</a>
+                </div>
+                <div
+                    class="bg-gray-800 text-white p-4 rounded-xl w-full md:w-[48%] flex items-center justify-center transition duration-100 ease-in-out hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-lg border border-gray-700 hover:border-[var(--primary-color)]">
+                    <a href="#projects" class="font-semibold hover:underline">📁 View Projects</a>
+                </div>
+                <div
+                    class="bg-gray-800 text-white p-4 rounded-xl w-full md:w-[48%] flex items-center justify-center transition duration-100 ease-in-out hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-lg border border-gray-700 hover:border-[var(--primary-color)]">
+                    <p class="text-sm font-medium text-green-400">✅ Available for freelance & full-time</p>
+                </div>
+                <div
+                    class="bg-gray-800 text-white p-4 rounded-xl w-full md:w-[48%] flex items-center justify-center transition duration-100 ease-in-out hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none shadow-lg border border-gray-700 hover:border-[var(--primary-color)]">
+                    <p class="text-sm">Crafted with ❤️ by <span class="font-semibold">Felipe Chassot</span></p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-gray-900 p-4 rounded-xl shadow-lg flex gap-4 z-50 theme-switch">
+            <button class="w-6 h-6 rounded-full bg-red-500 focus:outline-none transition-transform hover:scale-110"
+                data-theme="red-theme" aria-label="Switch to red theme"></button>
+            <button class="w-6 h-6 rounded-full bg-blue-500 focus:outline-none transition-transform hover:scale-110"
+                data-theme="blue-theme" aria-label="Switch to blue theme"></button>
+            <button class="w-6 h-6 rounded-full bg-green-500 focus:outline-none transition-transform hover:scale-110"
+                data-theme="green-theme" aria-label="Switch to green theme"></button>
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+
+</html>
