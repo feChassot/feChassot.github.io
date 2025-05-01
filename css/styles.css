@@ -170,3 +170,8 @@ body.blue-theme {
 body.green-theme {
   --primary-color: #22c55e;
 }
+
+#local-clock {
+  letter-spacing: 1px;
+  font-family: 'Satoshi', 'Inter', sans-serif;
+}
